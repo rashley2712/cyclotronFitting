@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo ... computing "B"$1"W"$2"T"$3"L"$4.dat
+echo ... filename will be $6.dat
+
+echo 'Sichtwinkel      [grad] : '$2.0   > ConstLambda_Ein
+echo 'Magnetfeld       [MG]   : '$1.0 >> ConstLambda_Ein
+echo 'Temperatur       [keV]  : '$3.0   >> ConstLambda_Ein
+echo 'log(Lambda)      [1]    : '$4.0   >> ConstLambda_Ein
+echo 'Geometrie= 0 oder 1     : 0'    >> ConstLambda_Ein
+
+./ConstLambda.bin > $6.dat
+#./ConstLambda.bin > "B"$1"W"$2"T"$3"L"$4.dat
+
